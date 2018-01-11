@@ -1,6 +1,9 @@
 var produtos = [
     {
-        // image : "img/puma.jpg",
+        image: {
+        src: '"img/puma.jpg"',
+        alt: "Puma"
+        },
         nome : "Puma Golf Raglan Tech Polo Tee",
         color : "15",
         size : "XXL",
@@ -9,7 +12,10 @@ var produtos = [
     },
 
     {
-        // image : "teste",
+        image : {
+            src: '"img/Nike.jpg"',
+            alt: "Nike"
+        },
         nome : "Nike Men's Running Shoes",
         color : "orange",
         size : 43,
@@ -18,7 +24,10 @@ var produtos = [
     },
 
     {
-        // image : "DC Men's Axis Snowboard Jacket",
+        image :{
+            src: '"img/dc jaquet.jpg"',
+            alt: "DC"
+        },
         nome : "DC Men's Axis Snowboard Jacket",
         color : "blue",
         size : 5,
@@ -43,15 +52,17 @@ var teste = "teste";
 // }
 
 // document.getElementById('teste'.innerHTML) = descProd;
-
-document.getElementById('produto_nome').innerHTML = produtos[0].nome + "<br> COLOR: " + produtos[0].color + " <p> SIZE: " + produtos[0].size;
+document.getElementById('produto1').innerHTML  ="<img src= " +  produtos[0].image.src +" />";
+document.getElementById('produto_nome').innerHTML = produtos[0].nome + "<br> COLOR: " + produtos[0].color + "  SIZE: " + produtos[0].size;
 document.getElementById('produto_price').innerHTML = "$" + produtos[0].price;
 document.getElementById('produto_total').innerHTML = "$" + produtos[0].total;
 
+document.getElementById('produto2').innerHTML  ="<img src= " +  produtos[1].image.src +" />";
 document.getElementById('produto_nome2').innerHTML = produtos[1].nome + "<br> COLOR: " + produtos[1].color + " <p> SIZE: " + produtos[1].size;
 document.getElementById('produto_price2').innerHTML = "$" + produtos[1].price;
 document.getElementById('produto_total2').innerHTML = "$" + produtos[1].total;
 
+document.getElementById('produto3').innerHTML  ="<img src= " +  produtos[2].image.src +" />";
 document.getElementById('produto_nome3').innerHTML = produtos[2].nome + "<br> COLOR: " + produtos[2].color + " <p> SIZE: " + produtos[2].size;
 document.getElementById('produto_price3').innerHTML = "$" + produtos[2].price;
 document.getElementById('produto_total3').innerHTML = "$" + produtos[2].total;
