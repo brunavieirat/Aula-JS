@@ -11,18 +11,26 @@
 
 
 <section>
-
+<!-- <header>
 <ul class="menu"> 
-    <a><li> <div class="item"> 1 </div> <div class="item_desc">Shopping Cart</div></li></a>
-    <a><li> <div class="item"> 2 </div> <div class="item_desc">Shipping Info</div></li></a>
-    <a><li> <div class="item"> 3 </div> <div class="item_desc">Payment Method</div></li></a>
+    <li> <div class="item"> 1 </div> <a>  <div class="item_desc">Shopping Cart</div></li></a>
+    <li> <div class="item"> 2 </div>  <a>  <div class="item_desc">Shipping Info</div></li></a>
+    <li> <div class="item"> 3 </div>   <a> <div class="item_desc">Payment Method</div></li></a>
 </ul>
+</header>
+
+<div class="texto">
 
 <p> You have <b> 3 items </b> in your order </p>
+
+</div> -->
+
 
 <form action="">
 <table>
 <tr>
+<th></th>
+<th></th>
 <th>NAME</th> 
 <th>PRICE</th>
 <th>QUANTITY</th>
@@ -30,10 +38,30 @@
 </tr>
 
 <tr>
-   <td> <div id="resultado"> </td> 
-    <td> <div id="product"> </td> 
-   <!-- <td> teste2</td>
-   <td> teste3</td> -->
+   <!-- <td> <div id="resultado"> </td> 
+    <td> <div id="product"> </td>  -->
+
+   <td>    
+     <div class="item_remove"> 
+    <img src="img/excluir.png" alt="remover produto">
+     </div>
+   </td>
+   <td>
+    <div class="item_img">
+    <img src="img/puma.jpg" alt="product 1" id="puma">
+    </div>
+    </td>
+    <td>
+    <div class = "item_desc">
+    
+    <div id="produto_nome"> </td>
+    </td>
+    </div>
+
+   <td> <div id="produto_price"></td>
+   <td> <input type="number" id="price" value="3"> </td>
+   <td> $ 216</td>
+
 </tr>
 
 </table>
