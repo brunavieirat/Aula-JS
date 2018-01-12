@@ -1,5 +1,6 @@
 var produtos = [
     {
+        codigo: 211,
         image: {
         src: '"img/puma.jpg"',
         alt: "Puma"
@@ -16,6 +17,7 @@ var produtos = [
     },
 
     {
+        codigo: 222,
         image : {
             src: '"img/Nike.jpg"',
             alt: "Nike"
@@ -28,6 +30,7 @@ var produtos = [
     },
 
     {
+        codigo: 333,
         image :{
             src: '"img/dc jaquet.jpg"',
             alt: "DC"
@@ -101,11 +104,11 @@ var total;
 
      template += '<td>  <div class = "item_desc">  <div class="produto_nome">'+ produtos[i].nome + '</div> <div> COLOR: ' + produtos[i].color + '  SIZE: ' + produtos[i].size +' </div> </div></td>  </td>  ';
 
-     template += '<td> <div> '+ "$" + produtos[i].price + ' </div></td>     <td> <input type="number" onchange="funcao(this.value)" id="qtd" > </td>  ';
+     template += '<td> <div> '+ "$" + produtos[i].price + ' </div></td>     <td> <input type="number" id="' + produtos[i].codigo + '" onchange="obterQtd(this.id, this.value)"  > </td>  ';
     
     
 
-     template += '<td> <div onload="funcao(teste2)> $' + produtos[i].total +'  </div> </td>  </tr></table>';
+     template += '<td> <div id=total-' + produtos[i].codigo +'> '+ produtos[i].total +'  </div> </td>  </tr></table>';
     
      
 
@@ -119,30 +122,61 @@ var total;
     //  document.getElementById('teste').innerHTML = descProd;
 }
 
-function funcao(teste){
 
-    // for (var i = 0; i < produtos.length; i++){
+
+
+function obterQtd(_codigo, _qtd){
+
+for (var index = 0; index < produtos.length; index++) {
+   
+    if (produtos[index].codigo == _codigo) {
+        
+        produtos[index].qtd = _qtd;
+
+        // //fazer as atualizaçoes 
+         var totalProduto = produtos[index].price * produtos[index].qtd;
+          var codProd = 'total-' + produtos[index].codigo;
+
+
+         document.getElementById(codProd).innerHTML = "R$ " + totalProduto;
+
+        console.log(produtos[index]);
+    
+    
+        break;
+    }
+    
+}
+
+}
+
+
+
+
+// function funcao(teste){
+
+//     // for (var i = 0; i < produtos.length; i++){
         
 
-    var teste  = document.getElementById('qtd').value;
+//     var teste  = document.getElementById('qtd').value;
     
 
-    teste2 = (teste * produtos[0].price);
-    
-    alert(teste2);
-    //  alert(produtos[0].total);
+//     teste2 = (teste * produtos[0].price);
+//     return teste2;
+//     alert(teste2);
+//     //  alert(produtos[0].total);
    
      
 
     
 
-    // }
+//     // }
 
     
 
 
 
-}
+
 
 
 
