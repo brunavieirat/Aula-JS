@@ -1,7 +1,7 @@
 var produtos = [
     {
         image: {
-        src: '"img/puma.jpg"',
+        src: "img/puma.jpg",
         alt: "Puma"
         },
         nome : "Puma Golf Raglan Tech Polo Tee",
@@ -82,21 +82,22 @@ function carregarProdutos() {
 
 // var descProd = "";
 var template = "";
+alert('teste');
 
 // alert(descProd);
 
  for (var i = 0; i < produtos.length; i++){
 
      
-    template += '<tr>   <td>     <div class="item_remove">     <img src="img/excluir.png" alt="remover produto">     </div>    </td>    <td>';
+    template += '<table> <tr>   <td>     <div class="item_remove">     <img src="img/excluir.png" alt="remover produto">     </div>    </td>    ';
     
-    template += '<td> <div class="item_img">  <div> <img src= " + '+ produtos[0].image.src +' /> </div>  </div>  </td>'  ;
+    template += '<td> <div class="item_img">  <div> <img src= "+ ' + produtos[i].image.src + '" /> </div>  </div>  </td>'  ;
 
-    template += '<td>  <div class = "item_desc">  <div>'+ produtos[0].nome + '<br> COLOR: ' + produtos[0].color + '  SIZE: ' + produtos[0].size +' </td>  </td> </div> </div>';
+     template += '<td>  <div class = "item_desc">  <div>'+ produtos[i].nome + '<br> COLOR: ' + produtos[i].color + '  SIZE: ' + produtos[i].size +' </div> </td>  </td>  </div>';
 
-    template += '<td> <div> '+ "$" + produtos[0].price + ' </div></td>     <td> <input type="number" id="qtd" value="3"> </td>  '
+     template += '<td> <div> '+ "$" + produtos[i].price + ' </div></td>     <td> <input type="number" id="qtd" value="3"> </td>  '
     
-    template += '<td> <div>"$"' + produtos[0].total +'  </div> </td>  </tr>';
+     template += '<td> <div> $' + produtos[i].total +'  </div> </td>  </tr></table>';
 
 
 
@@ -107,7 +108,7 @@ var template = "";
   
     //  prod += "<img src= " +  produtos[0].image.src +" />" + produtos[1].nome + "<br> COLOR: " + produtos[1].color + " <p> SIZE: " + produtos[1].size;
     
-    
+// alert(template);    
 
     }
 
