@@ -5,9 +5,12 @@ var produtos = [
         alt: "Puma"
         },
         nome : "Puma Golf Raglan Tech Polo Tee",
-        color : "15",
+        color : '<div class="produto_color"></div>',
         size : "XXL",
         price : 72,
+        qtd: {
+            valor: 0,
+        },
         total: 216
         
     },
@@ -76,6 +79,8 @@ var produtos = [
 // document.getElementById('produto_img').innerHTML = "<img src= " + produtos[0].image + " alt="product 1" id="puma">"
 
 
+
+
 function carregarProdutos() {
 
     event.preventDefault();
@@ -89,29 +94,23 @@ var template = "";
  for (var i = 0; i < produtos.length; i++){
 
      
-    template += '<table> <tr>   <td>     <div class="item_remove">     <img src="img/excluir.png" alt="remover produto">     </div>    </td>    ';
+    template += '<table> <tr class="produtos">   <td>     <div class="item_remove">     <img src="img/excluir.png" alt="remover produto">     </div>    </td>    ';
     
     template += '<td> <div class="item_img">   <img src=' +  produtos[i].image.src +' /> </div>    </td>'  ;
 
-     template += '<td>  <div class = "item_desc">  <div>'+ produtos[i].nome + '<br> COLOR: ' + produtos[i].color + '  SIZE: ' + produtos[i].size +' </div> </td>  </td>  </div>';
+     template += '<td>  <div class = "item_desc">  <div class="produto_nome">'+ produtos[i].nome + '</div> <div> COLOR: ' + produtos[i].color + '  SIZE: ' + produtos[i].size +' </div> </div></td>  </td>  ';
 
-     template += '<td> <div> '+ "$" + produtos[i].price + ' </div></td>     <td> <input type="number" id="qtd" value="3"> </td>  '
+     template += '<td> <div> '+ "$" + produtos[i].price + ' </div></td>     <td> <input type="number" id="qtd" > </td>  '
     
      template += '<td> <div> $' + produtos[i].total +'  </div> </td>  </tr></table>';
-
-
-
-
- 
-
-    //  descProd += "<p>Teste" +produtos[i].nome + "</p><br> COLOR: " + produtos[i].color + " <p> SIZE: " + produtos[i].size + "</p> ";
-  
-    //  prod += "<img src= " +  produtos[0].image.src +" />" + produtos[1].nome + "<br> COLOR: " + produtos[1].color + " <p> SIZE: " + produtos[1].size;
     
-// alert(template);    
+     
+
+    //  var total = produtos[i].price * 
 
     }
-
+  
+  
     
     document.getElementById('ok').innerHTML = template;
     //  document.getElementById('teste').innerHTML = descProd;
