@@ -90,6 +90,7 @@ var template = "";
 
 
 // alert(descProd);
+var total;
 
  for (var i = 0; i < produtos.length; i++){
 
@@ -100,9 +101,11 @@ var template = "";
 
      template += '<td>  <div class = "item_desc">  <div class="produto_nome">'+ produtos[i].nome + '</div> <div> COLOR: ' + produtos[i].color + '  SIZE: ' + produtos[i].size +' </div> </div></td>  </td>  ';
 
-     template += '<td> <div> '+ "$" + produtos[i].price + ' </div></td>     <td> <input type="number" id="qtd" > </td>  '
+     template += '<td> <div> '+ "$" + produtos[i].price + ' </div></td>     <td> <input type="number" onchange="funcao(this.value)" id="qtd" > </td>  ';
     
-     template += '<td> <div> $' + produtos[i].total +'  </div> </td>  </tr></table>';
+    
+
+     template += '<td> <div onload="funcao(teste2)> $' + produtos[i].total +'  </div> </td>  </tr></table>';
     
      
 
@@ -114,6 +117,31 @@ var template = "";
     
     document.getElementById('ok').innerHTML = template;
     //  document.getElementById('teste').innerHTML = descProd;
+}
+
+function funcao(teste){
+
+    // for (var i = 0; i < produtos.length; i++){
+        
+
+    var teste  = document.getElementById('qtd').value;
+    
+
+    teste2 = (teste * produtos[0].price);
+    
+    alert(teste2);
+    //  alert(produtos[0].total);
+   
+     
+
+    
+
+    // }
+
+    
+
+
+
 }
 
 
