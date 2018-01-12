@@ -1,7 +1,7 @@
 var produtos = [
     {
         image: {
-        src: "img/puma.jpg",
+        src: '"img/puma.jpg"',
         alt: "Puma"
         },
         nome : "Puma Golf Raglan Tech Polo Tee",
@@ -82,7 +82,7 @@ function carregarProdutos() {
 
 // var descProd = "";
 var template = "";
-alert('teste');
+
 
 // alert(descProd);
 
@@ -91,7 +91,7 @@ alert('teste');
      
     template += '<table> <tr>   <td>     <div class="item_remove">     <img src="img/excluir.png" alt="remover produto">     </div>    </td>    ';
     
-    template += '<td> <div class="item_img">  <div> <img src= "+ ' + produtos[i].image.src + '" /> </div>  </div>  </td>'  ;
+    template += '<td> <div class="item_img">   <img src=' +  produtos[i].image.src +' /> </div>    </td>'  ;
 
      template += '<td>  <div class = "item_desc">  <div>'+ produtos[i].nome + '<br> COLOR: ' + produtos[i].color + '  SIZE: ' + produtos[i].size +' </div> </td>  </td>  </div>';
 
