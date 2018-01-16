@@ -45,44 +45,6 @@ var produtos = [
 
 
 
-// document.getElementById('produto_nome').innerHTML = produtos[0].nome;
-// document.getElementById('produto_color').innerHTML = "COLOR: " + produtos[0].color;
-
-
-
-// document.getElementById('teste'.innerHTML) = descProd;
-
-
-
-
-
-// document.getElementById('produto1').innerHTML  ="<img src= " +  produtos[0].image.src +" />";
-// document.getElementById('produto_nome').innerHTML = produtos[0].nome + "<br> COLOR: " + produtos[0].color + "  SIZE: " + produtos[0].size;
-// document.getElementById('produto_price').innerHTML = "$" + produtos[0].price;
-// document.getElementById('produto_total').innerHTML = "$" + produtos[0].total;
-
-
-
-// document.getElementById('produto2').innerHTML  ="<img src= " +  produtos[1].image.src +" />";
-// document.getElementById('produto_nome2').innerHTML = produtos[1].nome + "<br> COLOR: " + produtos[1].color + " <p> SIZE: " + produtos[1].size;
-// document.getElementById('produto_price2').innerHTML = "$" + produtos[1].price;
-// document.getElementById('produto_total2').innerHTML = "$" + produtos[1].total;
-
-// document.getElementById('produto3').innerHTML  ="<img src= " +  produtos[2].image.src +" />";
-// document.getElementById('produto_nome3').innerHTML = produtos[2].nome + "<br> COLOR: " + produtos[2].color + " <p> SIZE: " + produtos[2].size;
-// document.getElementById('produto_price3').innerHTML = "$" + produtos[2].price;
-// document.getElementById('produto_total3').innerHTML = "$" + produtos[2].total;
-
-
-
-
-
-
-// produtos[0].nome + "<br> COLOR: " + produtos[0].color + " <p> SIZE: " + produtos[0].size;
-// document.getElementById('produto_img').innerHTML = "<img src= " + produtos[0].image + " alt="product 1" id="puma">"
-
-
-
 
 function carregarProdutos() {
 
@@ -104,28 +66,36 @@ var total;
 
      template += '<td>  <div class = "item_desc">  <div class="produto_nome">'+ produtos[i].nome + '</div> <div> COLOR: ' + produtos[i].color + '  SIZE: ' + produtos[i].size +' </div> </div></td>  </td>  ';
 
-     template += '<td> <div> '+ "$" + produtos[i].price + ' </div></td>     <td> <input type="number" id="' + produtos[i].codigo + '" onchange="obterQtd(this.id, this.value)"  > </td>  ';
+     template += '<td> <div> $' + produtos[i].price + ' </div></td>     <td> <input type="number" id="' + produtos[i].codigo + '" onchange="obterQtd(this.id, this.value)"  > </td>  ';
     
-    
+    //  template +=     '<span id="v1" class="product__value"><strong>R$ </strong>'+produtos[i].preco+'</span>*<input type="number" onchange="atualizarQuantidade(this.id, this.value)" value="'+produtos[i].qtd+'" name="" id="'+produtos[i].codigo+'"> = <strong>R$ </strong><span id="total-'+produtos[i].codigo+'">'+totalProduto+'</span>';
+    //     template += '</div>';
 
      template += '<td> <div id=total-' + produtos[i].codigo +'> '+ produtos[i].total +'  </div> </td>  </tr></table>';
-    
+
      
 
     //  var total = produtos[i].price * 
+    
 
     }
   
   
     
     document.getElementById('ok').innerHTML = template;
+    document.getElementById("total-geral").innerHTML = totalGeral;
+    // document.getElementById('subtotal').innerHTML = subtotal;
+
+     
     //  document.getElementById('teste').innerHTML = descProd;
 }
 
 
 
 
-function obterQtd(_codigo, _qtd){
+function obterQtd(_codigo, _qtd, _subtotal){
+
+
 
 for (var index = 0; index < produtos.length; index++) {
    
@@ -135,17 +105,26 @@ for (var index = 0; index < produtos.length; index++) {
 
         // //fazer as atualizaçoes 
          var totalProduto = produtos[index].price * produtos[index].qtd;
-          var codProd = 'total-' + produtos[index].codigo;
+         var codProd = 'total-' + produtos[index].codigo;
 
 
-         document.getElementById(codProd).innerHTML = "R$ " + totalProduto;
+            var totalAntigo = document.getElementById(codProd).innerHTML;
+            console.log(totalAntigo);
+            totalGeral = (totalGeral - totalAntigo) + novoTotal;
+            
+            document.getElementById(codProd).innerHTML = novoTotal.toFixed(2);
+            //atualizar o total geral
+            document.getElementById('total-geral').innerHTML = totalGeral.toFixed(2);
+         
+        //  document.getElementById(codProd).innerHTML = "R$ " + totalProduto;
 
-        console.log(produtos[index]);
+        // console.log(produtos[index]);
     
     
         break;
     }
     
+      
 }
 
 }
@@ -153,24 +132,11 @@ for (var index = 0; index < produtos.length; index++) {
 
 
 
-// function funcao(teste){
 
-//     // for (var i = 0; i < produtos.length; i++){
-        
 
-//     var teste  = document.getElementById('qtd').value;
-    
 
-//     teste2 = (teste * produtos[0].price);
-//     return teste2;
-//     alert(teste2);
-//     //  alert(produtos[0].total);
-   
-     
 
-    
 
-//     // }
 
     
 
